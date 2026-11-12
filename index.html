@@ -9,12 +9,10 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://mhcstudios.netlify.app">
 <title>MHC Studios</title>
-<meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=Inter:wght@400;500&display=swap">
 <style>
-/* Layout: one narrow column, wordmark on top, two brand groups of link rows */
 :root {
   --bg: #f4f5f7;
   --surface: #ffffff;
@@ -27,17 +25,14 @@
   --body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
+  :root {
     --bg: #111317; --surface: #1a1d23; --fg: #eef0f4; --muted: #a2a8b4;
     --line: #2c3039; --accent: #6aa8e6; --accent-soft: #1b2a3a; color-scheme: dark;
   }
 }
-:root[data-theme="dark"] {
-  --bg: #111317; --surface: #1a1d23; --fg: #eef0f4; --muted: #a2a8b4;
-  --line: #2c3039; --accent: #6aa8e6; --accent-soft: #1b2a3a; color-scheme: dark;
-}
 * { box-sizing: border-box; }
 body {
+  margin: 0;
   background: var(--bg); color: var(--fg); font-family: var(--body);
   font-size: 15px; line-height: 1.55;
   padding-left: max(16px, env(safe-area-inset-left, 0px));
@@ -50,6 +45,11 @@ body {
 .mark .rule { width: 56px; height: 1px; background: var(--fg); opacity: .5; margin: 14px auto; }
 .mark .studios { font-family: var(--display); font-weight: 500; font-size: 13px; letter-spacing: 0.42em; padding-left: 0.42em; color: var(--muted); }
 .mark p { margin: 18px 0 0; color: var(--muted); font-size: 14px; }
+.mark .about { margin-top: 10px; font-size: 13px; color: var(--muted); max-width: 34ch; margin-left: auto; margin-right: auto; }
+.brands { display: flex; align-items: center; gap: 12px; margin-bottom: -12px; }
+.brands::before, .brands::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+.brands span { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+.parent { font-size: 12px; color: var(--accent); letter-spacing: 0.02em; margin: -6px 2px 0; }
 section { display: flex; flex-direction: column; gap: 10px; }
 .head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 0 2px; }
 .head h2 { margin: 0; font-family: var(--display); font-weight: 600; font-size: 17px; letter-spacing: 0.01em; text-wrap: balance; }
@@ -85,29 +85,33 @@ footer { text-align: center; color: var(--muted); font-size: 12px; letter-spacin
     <div class="rule"></div>
     <div class="studios">STUDIOS</div>
     <p>Photography and app development from Aylmer, Ontario</p>
+    <p class="about">MHC Studios is the parent company behind the brands below.</p>
   </header>
+
+  <div class="brands"><span>Our brands</span></div>
 
   <section aria-labelledby="photo">
     <div class="head"><h2 id="photo">MH Captures/Media</h2><span>Photography</span></div>
+    <p class="parent">An MHC Studios company</p>
     <p class="tag">Events · Portraits · Family · Grad</p>
     <a class="row primary" href="https://www.mhcapturesmedia.com" target="_blank" rel="noopener">
       <span class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg></span>
-      <span class="txt"><strong>Website and bookings</strong><small>mhcapturesmedia.com</small></span>
+      <span class="txt"><strong>MH Captures/Media</strong><small>Website and bookings</small></span>
       <span class="go" aria-hidden="true">→</span>
     </a>
     <a class="row" href="https://www.instagram.com/mh_captures_media/" target="_blank" rel="noopener">
       <span class="ico"><svg viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></span>
-      <span class="txt"><strong>Instagram</strong><small>@mh_captures_media</small></span>
+      <span class="txt"><strong>MH Captures/Media</strong><small>Instagram</small></span>
       <span class="go" aria-hidden="true">→</span>
     </a>
     <a class="row" href="https://www.facebook.com/mhcapturesmedia" target="_blank" rel="noopener">
       <span class="ico"><svg viewBox="0 0 24 24"><path d="M5 5h14v10H10l-4 4v-4H5z"/></svg></span>
-      <span class="txt"><strong>Facebook</strong><small>facebook.com/mhcapturesmedia</small></span>
+      <span class="txt"><strong>MH Captures/Media</strong><small>Facebook</small></span>
       <span class="go" aria-hidden="true">→</span>
     </a>
   </section>
 
-  <footer>© 2026 MHC Studios</footer>
+  <footer>© 2026 MHC Studios · MH Captures/Media is an MHC Studios company</footer>
 </main>
 </body>
 </html>
