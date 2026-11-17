@@ -1,117 +1,393 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="MHC Studios: photography and app development from Aylmer, Ontario.">
-<meta property="og:title" content="MHC Studios">
-<meta property="og:description" content="Photography and app development from Aylmer, Ontario.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://mhcstudios.netlify.app">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MHC Studios</title>
+<meta name="description" content="MHC Studios is an independent creative studio from Aylmer, Ontario — home of MH Captures/Media photography and new digital products.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:title" content="MHC Studios">
+<meta property="og:image" content="https://mhcstudios.ca/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=Inter:wght@400;500&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;1,9..144,300&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg: #f4f5f7;
-  --surface: #ffffff;
-  --fg: #16181d;
-  --muted: #5d6370;
-  --line: #dfe2e8;
-  --accent: #185fa5;
-  --accent-soft: #e6f0fa;
-  --display: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
-  --body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #111317; --surface: #1a1d23; --fg: #eef0f4; --muted: #a2a8b4;
-    --line: #2c3039; --accent: #6aa8e6; --accent-soft: #1b2a3a; color-scheme: dark;
+  :root{
+    --ink:#16181d; --ink-2:#1d2026; --ink-3:#262a31;
+    --paper:#eef0f4; --muted:#9ba1ad; --line:rgba(242,238,230,.12);
+    --accent:#d9a45b; --accent-2:#b5763a;
+    --serif:'Fraunces', Georgia, serif; --sans:'Inter', system-ui, sans-serif;
+    --max:1180px;
   }
-}
-* { box-sizing: border-box; }
-body {
-  margin: 0;
-  background: var(--bg); color: var(--fg); font-family: var(--body);
-  font-size: 15px; line-height: 1.55;
-  padding-left: max(16px, env(safe-area-inset-left, 0px));
-  padding-right: max(16px, env(safe-area-inset-right, 0px));
-  padding-block: 48px 40px;
-}
-.wrap { max-width: 440px; margin: 0 auto; display: flex; flex-direction: column; gap: 36px; }
-.mark { text-align: center; }
-.mark .mhc { font-family: var(--display); font-weight: 600; font-size: 44px; letter-spacing: 0.22em; line-height: 1; padding-left: 0.22em; }
-.mark .rule { width: 56px; height: 1px; background: var(--fg); opacity: .5; margin: 14px auto; }
-.mark .studios { font-family: var(--display); font-weight: 500; font-size: 13px; letter-spacing: 0.42em; padding-left: 0.42em; color: var(--muted); }
-.mark p { margin: 18px 0 0; color: var(--muted); font-size: 14px; }
-.mark .about { margin-top: 10px; font-size: 13px; color: var(--muted); max-width: 34ch; margin-left: auto; margin-right: auto; }
-.brands { display: flex; align-items: center; gap: 12px; margin-bottom: -12px; }
-.brands::before, .brands::after { content: ""; flex: 1; height: 1px; background: var(--line); }
-.brands span { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
-.parent { font-size: 12px; color: var(--accent); letter-spacing: 0.02em; margin: -6px 2px 0; }
-section { display: flex; flex-direction: column; gap: 10px; }
-.head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 0 2px; }
-.head h2 { margin: 0; font-family: var(--display); font-weight: 600; font-size: 17px; letter-spacing: 0.01em; text-wrap: balance; }
-.head span { font-size: 12px; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; }
-.tag { margin: -4px 2px 4px; font-size: 13px; color: var(--muted); }
-a.row {
-  display: flex; align-items: center; gap: 14px;
-  background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
-  padding: 14px 16px; color: var(--fg); text-decoration: none;
-  transition: border-color .15s ease, transform .15s ease;
-}
-a.row:hover { border-color: var(--accent); transform: translateY(-1px); }
-a.row:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-.ico { width: 36px; height: 36px; border-radius: 9px; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; flex: none; }
-.ico svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-.txt { flex: 1; min-width: 0; }
-.txt strong { display: block; font-weight: 500; font-size: 15px; }
-.txt small { display: block; color: var(--muted); font-size: 13px; overflow-wrap: anywhere; }
-.go { color: var(--muted); font-size: 18px; flex: none; }
-a.row.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
-a.row.primary .txt small { color: rgba(255,255,255,.82); }
-a.row.primary .go { color: #fff; }
-a.row.primary .ico { background: rgba(255,255,255,.18); color: #fff; }
-footer { text-align: center; color: var(--muted); font-size: 12px; letter-spacing: 0.04em; }
-@media (prefers-reduced-motion: reduce) { a.row { transition: none; } a.row:hover { transform: none; } }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--ink);color:var(--paper);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  .eyebrow{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:600}
+  h1,h2,h3{font-family:var(--serif);font-weight:300;line-height:1.05;letter-spacing:-.01em}
+  h2{font-size:clamp(2.2rem,5vw,3.6rem)}
+  em{font-style:italic;color:var(--accent)}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:999px;font-weight:500;font-size:.95rem;transition:.25s;border:1px solid transparent;cursor:pointer;font-family:var(--sans)}
+  .btn-solid{background:var(--paper);color:var(--ink)}
+  .btn-solid:hover{background:var(--accent)}
+  .btn-ghost{border-color:var(--line);color:var(--paper)}
+  .btn-ghost:hover{border-color:var(--paper)}
+
+  /* NAV */
+  nav{position:fixed;inset:0 0 auto 0;z-index:50;transition:.3s;border-bottom:1px solid transparent}
+  nav.scrolled{background:rgba(14,14,15,.82);backdrop-filter:blur(14px);border-color:var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .logo{display:flex;align-items:center;gap:14px;font-family:Arial,'Helvetica Neue',Helvetica,sans-serif}
+  .logo b{font-weight:700;font-size:1.25rem;letter-spacing:.32em;margin-right:-.32em;color:var(--paper)}
+  .logo i{width:1px;height:20px;background:#8a8f99}
+  .logo small{font-size:.72rem;letter-spacing:.42em;color:var(--muted)}
+  .lockup{display:inline-flex;flex-direction:column;align-items:center;font-family:Arial,'Helvetica Neue',Helvetica,sans-serif}
+  .lockup b{font-weight:700;font-size:clamp(3rem,9vw,6rem);letter-spacing:.2em;margin-right:-.2em;line-height:1;color:var(--paper)}
+  .lockup i{display:block;width:34%;height:2px;background:#8a8f99;margin:22px 0 18px}
+  .lockup small{font-size:clamp(.9rem,2vw,1.3rem);letter-spacing:.5em;margin-right:-.5em;color:var(--muted)}
+  .links{display:flex;gap:34px;font-size:.9rem;color:var(--muted)}
+  .links a:hover{color:var(--paper)}
+  .menu-btn{display:none;background:none;border:0;color:var(--paper);font-size:1.5rem;cursor:pointer}
+
+  /* HERO */
+  .hero{min-height:100vh;display:flex;align-items:flex-end;padding:140px 0 80px;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:
+     radial-gradient(60% 50% at 78% 30%, rgba(217,164,91,.22), transparent 70%),
+     radial-gradient(40% 40% at 15% 80%, rgba(181,118,58,.14), transparent 70%)}
+  .aperture{position:absolute;right:-120px;top:50%;transform:translateY(-55%);width:620px;height:620px;opacity:.5}
+  .aperture circle{fill:none;stroke:rgba(242,238,230,.14)}
+  .spin{transform-origin:center;animation:spin 60s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .hero-in{position:relative;width:100%}
+  .hero h1{font-size:clamp(3.2rem,10vw,8.4rem);margin:22px 0 28px;max-width:11ch}
+  .hero p{max-width:520px;color:var(--muted);font-size:1.1rem;margin-bottom:36px}
+  .hero-row{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-meta{display:flex;justify-content:space-between;margin-top:80px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem;letter-spacing:.06em;flex-wrap:wrap;gap:12px}
+
+  section{padding:120px 0}
+
+  /* ABOUT */
+  .about{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:start}
+  .about p{color:var(--muted);font-size:1.08rem;margin-bottom:20px}
+  .about p strong{color:var(--paper);font-weight:500}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);margin-top:40px;border-top:1px solid var(--line)}
+  .stat{padding:24px 0}
+  .stat b{display:block;font-family:var(--serif);font-weight:300;font-size:2.2rem;color:var(--paper)}
+  .stat span{font-size:.8rem;color:var(--muted);letter-spacing:.06em}
+
+  /* DIVISIONS */
+  .head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px;flex-wrap:wrap}
+  .head p{max-width:400px;color:var(--muted)}
+  .divs{display:grid;grid-template-columns:1.4fr 1fr;gap:20px}
+  .card{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:var(--ink-2);display:flex;flex-direction:column;transition:.35s}
+  .card:hover{border-color:rgba(242,238,230,.3);transform:translateY(-4px)}
+  .card-art{height:340px;position:relative;overflow:hidden}
+  .art-photo{background:
+     linear-gradient(180deg,transparent 55%,var(--ink-2)),
+     radial-gradient(circle at 50% 45%, rgba(217,164,91,.28) 0, #1d1610 55%, var(--ink-2) 85%)}
+  .brand-logo{position:absolute;left:50%;top:50%;width:230px;height:230px;transform:translate(-50%,-50%);object-fit:contain;filter:drop-shadow(0 18px 40px rgba(0,0,0,.6));transition:transform .6s ease}
+  .card:hover .brand-logo{transform:translate(-50%,-50%) rotate(-8deg) scale(1.04)}
+  .art-photo .frame{position:absolute;inset:32px;border:1px solid rgba(255,255,255,.35);border-radius:4px}
+  .art-photo .frame::before,.art-photo .frame::after{content:"";position:absolute;width:22px;height:22px;border:2px solid #fff}
+  .art-photo .frame::before{top:-2px;left:-2px;border-right:0;border-bottom:0}
+  .art-photo .frame::after{bottom:-2px;right:-2px;border-left:0;border-top:0}
+  .rec{position:absolute;top:48px;left:52px;font-size:.7rem;letter-spacing:.2em;color:#fff;display:flex;align-items:center;gap:8px}
+  .rec i{width:8px;height:8px;border-radius:50%;background:#ff5a4a;animation:blink 1.4s infinite}
+  @keyframes blink{50%{opacity:.2}}
+  .art-app{background:linear-gradient(180deg,transparent 40%,var(--ink-2)),linear-gradient(135deg,#1f2a33,#11161b)}
+  .art-app{background:radial-gradient(circle at 50% 60%, rgba(108,77,255,.35), transparent 65%),linear-gradient(135deg,#1c1a2e,#111018)}
+  .art-app::after{content:"";position:absolute;inset:auto 0 0 0;height:110px;background:linear-gradient(180deg,transparent,var(--ink-2));z-index:2}
+  .phone{position:absolute;left:50%;top:36px;transform:translateX(-50%);width:210px;border-radius:30px;background:#0b0b0e;padding:8px;box-shadow:0 0 0 1.5px rgba(242,238,230,.25),0 30px 60px rgba(0,0,0,.55);transition:transform .6s ease}
+  .phone img{display:block;width:100%;border-radius:23px}
+  .card:hover .phone{transform:translateX(-50%) translateY(-10px)}
+  .card-body{padding:30px 32px 34px;flex:1;display:flex;flex-direction:column}
+  .tag{display:inline-block;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;padding:6px 12px;border:1px solid var(--line);border-radius:999px;color:var(--muted);margin-bottom:18px;align-self:flex-start}
+  .tag.live{color:var(--accent);border-color:rgba(217,164,91,.4)}
+  .card h3{font-size:2rem;margin-bottom:12px}
+  .card p{color:var(--muted);margin-bottom:24px;flex:1}
+  .arrow{font-weight:500;font-size:.92rem;display:inline-flex;gap:8px;align-items:center}
+  .arrow:hover{color:var(--accent)}
+
+  /* SERVICES */
+  .services{background:var(--paper);color:var(--ink)}
+  .services .eyebrow{color:var(--accent-2)}
+  .services em{color:var(--accent-2)}
+  .svc-list{border-top:1px solid rgba(14,14,15,.15)}
+  .svc{display:grid;grid-template-columns:80px 1fr 1.3fr 40px;gap:24px;align-items:center;padding:34px 0;border-bottom:1px solid rgba(14,14,15,.15);transition:.3s}
+  .svc:hover{padding-left:14px}
+  .svc .n{font-family:var(--serif);color:#8a857c}
+  .svc h3{font-size:clamp(1.6rem,3vw,2.4rem)}
+  .svc p{color:#5b5750}
+  .svc .go{font-size:1.3rem;text-align:right}
+  .svc-note{margin-top:28px;font-size:.88rem;color:#6d685f}
+
+  /* PROCESS */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .step{padding:30px 26px;border:1px solid var(--line);border-radius:18px;background:var(--ink-2)}
+  .step b{font-family:var(--serif);font-weight:300;font-size:2.6rem;color:var(--accent);display:block;margin-bottom:28px}
+  .step h4{font-size:1.05rem;font-weight:600;margin-bottom:8px}
+  .step p{font-size:.92rem;color:var(--muted)}
+
+  /* CONTACT */
+  .contact{display:grid;grid-template-columns:1fr 1fr;gap:70px}
+  .contact h2{margin:18px 0 22px}
+  .contact > div > p{color:var(--muted);margin-bottom:36px;max-width:420px}
+  .c-list{display:flex;flex-direction:column;gap:2px}
+  .c-item{display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-bottom:1px solid var(--line)}
+  .c-item span{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .c-item a,.c-item div{font-weight:500}
+  .c-item a:hover{color:var(--accent)}
+  form{background:var(--ink-2);border:1px solid var(--line);border-radius:22px;padding:36px;display:grid;gap:18px}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  label{font-size:.78rem;color:var(--muted);letter-spacing:.06em;display:block;margin-bottom:7px}
+  input,select,textarea{width:100%;background:var(--ink);border:1px solid var(--line);border-radius:12px;padding:14px 16px;color:var(--paper);font-family:var(--sans);font-size:.95rem;outline:none;transition:.2s}
+  input:focus,select:focus,textarea:focus{border-color:var(--accent)}
+  textarea{min-height:130px;resize:vertical}
+  .form-msg{display:none;padding:14px 16px;border-radius:12px;background:rgba(217,164,91,.12);color:var(--accent);font-size:.9rem}
+
+  footer{border-top:1px solid var(--line);padding:56px 0 40px}
+  .f-top{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;margin-bottom:56px}
+  .f-big{font-family:var(--serif);font-weight:300;font-size:clamp(2.6rem,8vw,6rem);line-height:1}
+  .f-cols{display:flex;gap:70px;font-size:.9rem}
+  .f-cols h5{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;font-weight:600}
+  .f-cols a{display:block;margin-bottom:8px;color:var(--paper)}
+  .f-cols a:hover{color:var(--accent)}
+  .f-bot{display:flex;justify-content:space-between;color:var(--muted);font-size:.8rem;flex-wrap:wrap;gap:10px}
+
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (max-width:900px){
+    .links{display:none;position:absolute;top:72px;left:0;right:0;flex-direction:column;gap:0;background:var(--ink-2);border-bottom:1px solid var(--line)}
+    .links.open{display:flex}
+    .links a{padding:18px 24px;border-top:1px solid var(--line)}
+    .menu-btn{display:block}
+    .about,.divs,.contact{grid-template-columns:1fr;gap:40px}
+    .steps{grid-template-columns:1fr 1fr}
+    .svc{grid-template-columns:44px 1fr 30px}
+    .svc p{grid-column:2/3}
+    .svc .go{grid-row:1;grid-column:3}
+    .aperture{width:420px;height:420px;right:-180px;top:30%}
+    section{padding:90px 0}
+  }
+  @media (max-width:560px){
+    .steps,.row2{grid-template-columns:1fr}
+    .stats{grid-template-columns:1fr 1fr 1fr}
+    .stat b{font-size:1.7rem}
+    form{padding:24px}
+    .f-cols{gap:40px}
+  }
 </style>
 </head>
 <body>
 
-<main class="wrap">
-  <header class="mark">
-    <div class="mhc">MHC</div>
-    <div class="rule"></div>
-    <div class="studios">STUDIOS</div>
-    <p>Photography and app development from Aylmer, Ontario</p>
-    <p class="about">MHC Studios is the parent company behind the brands below.</p>
-  </header>
+<nav id="nav">
+  <div class="wrap nav-in">
+    <a href="#top" class="logo" aria-label="MHC Studios home"><b>MHC</b><i></i><small>STUDIOS</small></a>
+    <div class="links" id="links">
+      <a href="#about">Studio</a>
+      <a href="#work">Divisions</a>
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+  </div>
+</nav>
 
-  <div class="brands"><span>Our brands</span></div>
+<header class="hero" id="top">
+  <svg class="aperture" viewBox="0 0 200 200" aria-hidden="true">
+    <g class="spin">
+      <circle cx="100" cy="100" r="98" stroke-width=".4"/>
+      <circle cx="100" cy="100" r="78" stroke-width=".4" stroke-dasharray="2 4"/>
+      <circle cx="100" cy="100" r="56" stroke-width=".4"/>
+      <circle cx="100" cy="100" r="30" stroke-width=".4" stroke-dasharray="1 3"/>
+    </g>
+  </svg>
+  <div class="wrap hero-in">
+    <div class="eyebrow">Creative studio · Aylmer, Ontario</div>
+    <h1>Stories, <em>captured</em> &amp; built.</h1>
+    <p>I'm Matthew Hildebrandt. MHC Studios is where my work comes together: photography through MH Captures/Media, and apps built for everyday life.</p>
+    <div class="hero-row">
+      <a href="#contact" class="btn btn-solid">Book a session →</a>
+      <a href="#work" class="btn btn-ghost">See what I do</a>
+    </div>
+    <div class="hero-meta">
+      <span>EST. 2026</span>
+      <span>PHOTOGRAPHY · DIGITAL</span>
+      <span>SERVING ELGIN COUNTY &amp; BEYOND</span>
+    </div>
+  </div>
+</header>
 
-  <section aria-labelledby="photo">
-    <div class="head"><h2 id="photo">MH Captures/Media</h2><span>Photography</span></div>
-    <p class="parent">An MHC Studios company</p>
-    <p class="tag">Events · Portraits · Family · Grad</p>
-    <a class="row primary" href="https://www.mhcapturesmedia.com" target="_blank" rel="noopener">
-      <span class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg></span>
-      <span class="txt"><strong>MH Captures/Media</strong><small>Website and bookings</small></span>
-      <span class="go" aria-hidden="true">→</span>
-    </a>
-    <a class="row" href="https://www.instagram.com/mh_captures_media/" target="_blank" rel="noopener">
-      <span class="ico"><svg viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></span>
-      <span class="txt"><strong>MH Captures/Media</strong><small>Instagram</small></span>
-      <span class="go" aria-hidden="true">→</span>
-    </a>
-    <a class="row" href="https://www.facebook.com/mhcapturesmedia" target="_blank" rel="noopener">
-      <span class="ico"><svg viewBox="0 0 24 24"><path d="M5 5h14v10H10l-4 4v-4H5z"/></svg></span>
-      <span class="txt"><strong>MH Captures/Media</strong><small>Facebook</small></span>
-      <span class="go" aria-hidden="true">→</span>
-    </a>
-  </section>
+<section id="about">
+  <div class="wrap about">
+    <div class="reveal">
+      <div class="eyebrow">The Studio</div>
+      <h2 style="margin-top:18px">One studio.<br><em>Many</em> ways to tell a story.</h2>
+    </div>
+    <div class="reveal">
+      <p><strong>I started MHC Studios to give everything I create one home.</strong> It began with a camera, and it keeps growing from there.</p>
+      <p>Through MH Captures/Media, I photograph the moments that matter to people here in Elgin County: events, portraits, families and graduations. Alongside that, I'm building straightforward apps that make everyday tasks a little easier.</p>
+      <p>Every project gets the same approach from me: clear communication, careful work, and results you'll be proud to share.</p>
+      <div class="stats">
+        <div class="stat"><b>2</b><span>Divisions</span></div>
+        <div class="stat"><b>4</b><span>Photo services</span></div>
+        <div class="stat"><b>ON</b><span>Locally based</span></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <footer>© 2026 MHC Studios · MH Captures/Media is an MHC Studios company</footer>
-</main>
+<section id="work" style="padding-top:0">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <div class="eyebrow">Divisions</div>
+        <h2 style="margin-top:18px">What we <em>make</em></h2>
+      </div>
+      <p>Two brands with their own focus, held to one standard of work.</p>
+    </div>
+    <div class="divs">
+      <article class="card reveal">
+        <div class="card-art art-photo"><img class="brand-logo" src="mhcm-logo.webp" alt="MH Captures/Media logo"></div>
+        <div class="card-body">
+          <span class="tag live">Now booking</span>
+          <h3>MH Captures/Media</h3>
+          <p>My photography brand. I shoot events, portraits, families and grads, with natural, well-lit images that look like you, delivered in a polished online gallery.</p>
+          <a class="arrow" href="https://www.mhcapturesmedia.com" target="_blank" rel="noopener">Visit mhcapturesmedia.com →</a>
+        </div>
+      </article>
+      <article class="card reveal">
+        <div class="card-art art-app"><div class="phone"><img src="firstshift-screen.webp" alt="FirstShift app home screen"></div></div>
+        <div class="card-body">
+          <span class="tag">In development</span>
+          <h3>FirstShift App</h3>
+          <p>My first app, built to make your first job easier. Find jobs that fit your schedule, get ready for interviews, and get support when work gets tough. Launching soon.</p>
+          <a class="arrow" href="https://firstshiftappdev.netlify.app/" target="_blank" rel="noopener">Join the waitlist →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <div class="eyebrow">Photography services</div>
+        <h2 style="margin-top:18px">Moments worth <em>keeping</em></h2>
+      </div>
+      <p style="color:#5b5750">These are the sessions I offer through MH Captures/Media.</p>
+    </div>
+    <div class="svc-list">
+      <a href="#contact" class="svc reveal" data-type="Event"><span class="n">01</span><h3>Events</h3><p>Birthdays, parties, community and corporate gatherings. I cover the day candidly so you can enjoy it.</p><span class="go">↗</span></a>
+      <a href="#contact" class="svc reveal" data-type="Portrait"><span class="n">02</span><h3>Portraits</h3><p>Personal, professional or creative portraits, shot on location wherever you feel most like yourself.</p><span class="go">↗</span></a>
+      <a href="#contact" class="svc reveal" data-type="Family"><span class="n">03</span><h3>Family</h3><p>Relaxed sessions for families of any size. I aim for real moments, not stiff poses.</p><span class="go">↗</span></a>
+      <a href="#contact" class="svc reveal" data-type="Graduation"><span class="n">04</span><h3>Graduation</h3><p>Cap-and-gown or casual, grad photos that mark the milestone properly.</p><span class="go">↗</span></a>
+    </div>
+    <p class="svc-note">I don't take on wedding photography at this time.</p>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <div class="head reveal">
+      <div>
+        <div class="eyebrow">How it works</div>
+        <h2 style="margin-top:18px">Simple from <em>start</em> to finish</h2>
+      </div>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><b>01</b><h4>Reach out</h4><p>Send me your date, location and what you have in mind.</p></div>
+      <div class="step reveal"><b>02</b><h4>Plan it</h4><p>We'll go over the details, timing and the shots that matter most to you.</p></div>
+      <div class="step reveal"><b>03</b><h4>Shoot day</h4><p>I'll guide you through a relaxed session. No pressure, just good photos.</p></div>
+      <div class="step reveal"><b>04</b><h4>Your gallery</h4><p>You'll get your edited images in an online gallery, ready to download and share.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="padding-top:40px">
+  <div class="wrap contact">
+    <div class="reveal">
+      <div class="eyebrow">Contact</div>
+      <h2>Let's make<br>something <em>good</em>.</h2>
+      <p>Whether you're booking a session or asking about FirstShift, I'd like to hear from you. I usually reply within a day or two.</p>
+      <div class="c-list">
+        <div class="c-item"><span>Email</span><a href="mailto:mhcstudios247@gmail.com">mhcstudios247@gmail.com</a></div>
+        <div class="c-item"><span>Photo bookings</span><a href="mailto:mhmedia@mhcapturesmedia.com">mhmedia@mhcapturesmedia.com</a></div>
+        <div class="c-item"><span>Instagram</span><a href="https://instagram.com/mhcstudios.ca" target="_blank" rel="noopener">@mhcstudios.ca</a></div>
+        <div class="c-item"><span>Photography</span><a href="https://instagram.com/mh_captures_media" target="_blank" rel="noopener">@mh_captures_media</a></div>
+        <div class="c-item"><span>Based in</span><div>Aylmer, Ontario</div></div>
+      </div>
+    </div>
+    <form class="reveal" id="form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="contact">
+      <p style="display:none"><label>Leave blank <input name="bot-field"></label></p>
+      <div class="row2">
+        <div><label for="name">Name</label><input id="name" name="name" required></div>
+        <div><label for="email">Email</label><input id="email" name="email" type="email" required></div>
+      </div>
+      <div class="row2">
+        <div><label for="type">I'm interested in</label>
+          <select id="type" name="type">
+            <option>Event</option><option>Portrait</option><option>Family</option><option>Graduation</option><option>FirstShift / other</option>
+          </select></div>
+        <div><label for="date">Preferred date</label><input id="date" name="date" type="date"></div>
+      </div>
+      <div><label for="msg">Tell us a little more</label><textarea id="msg" name="message" placeholder="Location, number of people, ideas…"></textarea></div>
+      <button class="btn btn-solid" type="submit" style="justify-content:center">Send message →</button>
+      <div class="form-msg" id="formMsg"></div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-top">
+      <div class="lockup" aria-label="MHC Studios"><b>MHC</b><i></i><small>STUDIOS</small></div>
+      <div class="f-cols">
+        <div><h5>Studio</h5><a href="#about">About</a><a href="#work">Divisions</a><a href="#services">Services</a><a href="#contact">Contact</a></div>
+        <div><h5>Follow</h5><a href="https://instagram.com/mhcstudios.ca" target="_blank" rel="noopener">Instagram</a><a href="https://facebook.com/mhcapturesmedia" target="_blank" rel="noopener">Facebook</a><a href="https://www.mhcapturesmedia.com" target="_blank" rel="noopener">MH Captures/Media</a></div>
+      </div>
+    </div>
+    <div class="f-bot"><span>© <span id="yr">2026</span> MHC Studios. All rights reserved.</span><span>Aylmer, Ontario, Canada</span></div>
+  </div>
+</footer>
+
+<script>
+  const nav=document.getElementById('nav');
+  addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>30));
+  const links=document.getElementById('links');
+  document.getElementById('menuBtn').onclick=()=>links.classList.toggle('open');
+  links.querySelectorAll('a').forEach(a=>a.onclick=()=>links.classList.remove('open'));
+  document.getElementById('yr').textContent=new Date().getFullYear();
+
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  document.querySelectorAll('.svc').forEach(s=>s.addEventListener('click',()=>{
+    const t=s.dataset.type, sel=document.getElementById('type');
+    [...sel.options].forEach(o=>{if(o.text===t)sel.value=o.text});
+  }));
+
+  // On the live Netlify site the form submits to Netlify Forms; elsewhere (preview) it just shows a note.
+  const form=document.getElementById('form'), msg=document.getElementById('formMsg');
+  const live=/mhcstudios\.(ca|netlify\.app)$/.test(location.hostname);
+  form.addEventListener('submit',e=>{
+    if(live){
+      e.preventDefault();
+      fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(form)).toString()})
+        .then(()=>{msg.textContent='Thanks, I\'ve got your message and will get back to you soon.';msg.style.display='block';form.reset()})
+        .catch(()=>{msg.textContent='Something went wrong. Please email mhcstudios247@gmail.com.';msg.style.display='block'});
+    } else {
+      e.preventDefault();
+      msg.textContent='Preview only — once this is live on mhcstudios.ca, messages will arrive in your Netlify Forms inbox.';
+      msg.style.display='block';
+    }
+  });
+</script>
 </body>
 </html>
